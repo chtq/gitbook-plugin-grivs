@@ -1,5 +1,5 @@
 {
-  "name": "gitbook-grvis",
+  "name": "gitbook-plugin-grvis",
   "description": "Gitbook GrViz plugin is used to select from markdown dot and converting it into a picture format svg",
   "main": "index.js",
   "version": "0.0.3",
