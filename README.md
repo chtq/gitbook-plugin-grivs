@@ -7,6 +7,7 @@ This is a sample plugin for GitBook. Gitbook GrViz plugin is used to select from
 
 *Text format dot:*
 ---dot
+
 digraph g {
 
 	overlap=false;
@@ -28,6 +29,7 @@ digraph g {
 		CollectionPoint -> ReturnPointTourist[label="" len=4.00];
 	}
 }
+
 ---
 
 
