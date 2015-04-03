@@ -6,6 +6,7 @@ This is a sample plugin for GitBook. Gitbook GrViz plugin is used to select from
 **Example:**
 
 *Text format dot:*
+
 ---dot
 
 digraph g {
