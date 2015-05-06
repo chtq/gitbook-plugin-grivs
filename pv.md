@@ -7,7 +7,6 @@
 	 * vacancyCounter表示空的缓冲块数初值是n;
 	 * mutex用于访问缓冲区时的互斥，初值是1。
 	producer 伪码
-		```
 		procedure producer() {
 		    while (true) {
 			item = produceItem();
@@ -18,9 +17,7 @@
 			itemCounter->V();
 		    }
 		}
-		```
 	consumer 伪码
-		```
 		procedure consumer() {
 		    while (true) {
 			itemCounter->P();
@@ -30,11 +27,9 @@
 			vacancyCounter->V();
 		    }
 		}
-		```
 	Monitor 方法
 	设置一个管程，内有两个condition variable：notFull和notEmpty。其中，notFull表示缓存满，notEmpty表示缓存空
 	producer 伪码
-		```
 		procedure producer() {
 		    lock->Acquire();
 		    while (count == n)
@@ -44,9 +39,7 @@
 		    notEmpty.Signal();
 		    lock->Release();
 		}
-		```
 		consumer 伪码
-		```
 		procedure consumer() {
 		    lock->Acquire();
 		    while (count == 0)
@@ -56,7 +49,6 @@
 		    notFull.Signal();
 		    lock->Release();
 		}
-		```
 	```
 2. (操作系统之PV金典)有一个许多进程共享的数据区，有一些只读这个数据区的进程(reader)和一些只往数据区中写数据的进程(writer)；此外还必须满足以下条件
  * 任意多的读进程可以同时读这个文件
