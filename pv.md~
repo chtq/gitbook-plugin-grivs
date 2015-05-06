@@ -10,11 +10,11 @@ producer 伪码
 	procedure producer() {
 	    while (true) {
 		item = produceItem();
-		vacancyCounter->P();
-		    mutex->P();
+		vacancyCounter-&gt;P();
+		    mutex-&gt;P();
 		        Add item to buffer;
-		    mutex->V();
-		itemCounter->V();
+		    mutex-&gt;V();
+		itemCounter-&gt;V();
 	    }
 	}
 	```
@@ -22,11 +22,11 @@ consumer 伪码
 	```
 	procedure consumer() {
 	    while (true) {
-		itemCounter->P();
-		    mutex->P();
+		itemCounter-&gt;P();
+		    mutex-&gt;P();
 		        Remove from buffer;
-		    mutex->V();
-		vacancyCounter->V();
+		    mutex-&gt;V();
+		vacancyCounter-&gt;V();
 	    }
 	}
 	```
@@ -35,25 +35,25 @@ Monitor 方法
 producer 伪码
 	```
 	procedure producer() {
-	    lock->Acquire();
+	    lock-&gt;Acquire();
 	    while (count == n)
-		notFull.Wait(&lock);
+		notFull.Wait(&amp;lock);
 	    Add c to the buffer;
 	    count++;
 	    notEmpty.Signal();
-	    lock->Release();
+	    lock-&gt;Release();
 	}
 	```
-	consumer 伪码
+	consumer 伪码<br />
 	```
 	procedure consumer() {
-	    lock->Acquire();
+	    lock-&gt;Acquire();
 	    while (count == 0)
-		notEmpty.Wait(&lock);
+		notEmpty.Wait(&amp;lock);
 	    Remove c from buffer;
 	    count--;
 	    notFull.Signal();
-	    lock->Release();
+	    lock-&gt;Release();
 	}
 	```
 
