@@ -7,6 +7,8 @@ This is a sample plugin for GitBook. Gitbook GrViz plugin is used to select from
 
 *Text format dot:*
 
+---dot
+
 digraph g {
 
 	overlap=false;
@@ -29,18 +31,16 @@ digraph g {
 	}
 }
 
-![](./images/dot.png)
+---
+
 
 ***Image dot.***
 
 **How to use it:**
 --------------
+安装gitbook
 
-Gitbook GrViz plugin can be installed from NPM using:
+npm install codepiano/gitbook -g
 
-```$ npm install gitbook-GrViz```
-
-***Additional requirements:***
-
- - Create a directory */assets/images/dot* in the root of your project.
- - [Install Graphviz.](http://www.graphviz.org/Download..php)
+要在工程目录里面运行gitbook
+比如 gitbook server ../test
